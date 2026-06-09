@@ -4,13 +4,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --primary-color: #007BFF;
     --secondary-color: #28A745;
     --background-color: #FFFFFF;
-    --text-color:#6C757D;
+    --tertiary-color:#6C757D;
+    --text-color: #343a40;
     --font-family: 'Open Sans Regular', 'Montserrat', bold;
 }
+
 body {
     font-family: var(--font-family);
     background-color: var(--background-color);
@@ -18,14 +21,318 @@ body {
     min-height: 100px;
     line-height: 1.6em;
 }
+
 /* Header Styles */
 .header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color) );
-    color: #fff;
+    color: var(--background-color);
     padding: 1rem 1rem;
     text-align: center;
 }
+
 .header h1 {
-    font-size: 3rem;
-    margin: 2rem;
+    font-size: 2.5rem;
+    margin: 1rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+/* Search Section Styles */
+.search-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.search-section input {
+    width: 350px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.search-section button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+}
+
+.search-section button:hover {
+    background: #005ec7;
+}
+
+/* MAIN CONTENT */
+
+.main-container {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* COUNTRY CARD */
+
+.country-section {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+    gap: 1.5rem;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.country-section h2 {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    max-width: 520px;
+}
+
+.country-card {
+    width: 100%;
+    max-width: 520px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--tertiary-color));
+    color: #ffffff;
+    padding: 1.75rem;
+    border-radius: 24px;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+    text-align: left;
+}
+
+.country-card img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+}
+
+.country-card h3,
+.country-card p {
+    color: #ffffff;
+}
+
+.country-card button {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: bold;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.country-card button:hover {
+    opacity: 0.9;
+}
+
+/*FAVORITES*/
+
+.favorites-section {
+    background: var(--primary-color);
+    border-radius: 16px;
+    height: fit-content;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+    gap: 1.5rem;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favorites-section h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 520px;
+}
+
+#favoritesList {
+    list-style: none;
+}
+
+#favoritesList li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+/* CURRENCY CONVERTER */
+
+.converter-section {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2rem;
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 16px 20px 30px rgba(0, 0, 0, 0.08)  ;
+}
+
+.converter-section h2 {
+    margin-bottom: 1rem;
+}
+
+.converter-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.converter-container input,
+.converter-container select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-width: 150px;
+}
+
+.converter-container button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#conversionResult {
+   margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*COMPARISON*/
+
+.comparison-section {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2rem;
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 16px 20px 30px rgba(0, 0, 0, 0.08)  ;
+}
+
+.comparison-section h2 {
+    margin-bottom: 1rem;
+}
+
+.comparison-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.comparison-controls select,
+.comparison-controls button {
+    padding: 12px;
+}
+
+#comparisonResult {
+    min-height: 150px;
+}
+
+/* QUIZ */
+
+.quiz-section {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2rem;
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 16px 20px 30px rgba(0, 0, 0, 0.08)  ;
+}
+
+#startQuizBtn {
+    margin-top: 1rem;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/*MAP*/
+.map-section {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 16px 20px 30px rgba(0, 0, 0, 0.08)  ;
+}
+
+#map {
+    height: 500px;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/*FOOTER*/
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #222;
+    color: white;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .search-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-section input {
+        width: 100%;
+    }
+
+    .converter-container {
+        flex-direction: column;
+    }
+
+    .comparison-controls {
+        flex-direction: column;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
 }

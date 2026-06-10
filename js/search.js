@@ -1,16 +1,54 @@
-const searchBtn = document.getElementById('search-btn');
-const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
-searchBtn.addEventListener(
-"click",
-searchCountry
-);
-async function searchCountry(){
+document.addEventListener("DOMContentLoaded", () => {
 
-    const country = searchInput.value.trim();
-    if(country === ""){
-        alert("Enter country");
-        return;
+    const searchBtn =
+        document.getElementById("searchBtn");
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    searchBtn.addEventListener(
+        "click",
+        searchCountry
+    );
+
+    searchInput.addEventListener(
+        "keypress",
+        (event) => {
+
+            if (event.key === "Enter") {
+                searchCountry();
+            }
+
+        }
+    );
+
+    async function searchCountry() {
+
+        const countryName =
+            searchInput.value.trim();
+
+        if (!countryName) {
+
+            alert("Please enter a country");
+
+            return;
+        }
+
+        document.getElementById(
+            "countryCard"
+        ).innerHTML =
+            "<p>Loading...</p>";
+
+        const country =
+            await fetchCountry(countryName);
+
+        if (country) {
+
+            console.log(country);
+
+            displayCountry(country);
+
+        }
     }
-}
-const data = await fetchCountry(country);
+
+});
